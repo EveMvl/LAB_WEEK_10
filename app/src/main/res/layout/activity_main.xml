@@ -7,7 +7,10 @@
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".MainActivity">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7f6ce830b8993aa37a2db28dbc661358c3dd9464
     <TextView
         android:id="@+id/text_total"
         android:layout_width="wrap_content"
@@ -16,12 +19,16 @@
         android:layout_marginBottom="20dp"
         android:textStyle="bold"
         android:textSize="32sp"/>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7f6ce830b8993aa37a2db28dbc661358c3dd9464
     <Button
         android:id="@+id/button_increment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_increment" />
+<<<<<<< HEAD
 
     <androidx.fragment.app.FragmentContainerView
         android:layout_width="match_parent"
@@ -29,3 +36,6 @@
         android:id="@+id/fragment_container"
         android:name="com.example.lab_week_10.FirstFragment"/>
 </LinearLayout>
+=======
+</LinearLayout>
+>>>>>>> 7f6ce830b8993aa37a2db28dbc661358c3dd9464

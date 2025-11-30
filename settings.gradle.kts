@@ -21,3 +21,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "LAB_WEEK_10"
 include(":app")
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> 7f6ce830b8993aa37a2db28dbc661358c3dd9464
