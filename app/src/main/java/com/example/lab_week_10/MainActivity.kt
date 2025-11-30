@@ -1,35 +1,36 @@
 package com.example.lab_week_10
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import com.example.lab_week_10.viewmodels.TotalViewModel
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.lab_week_10.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var viewModel: TotalViewModel
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        // Inisialisasi ViewModel
-        viewModel = ViewModelProvider(this)[TotalViewModel::class.java]
+        // Setup ViewBinding
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val textTotal = findViewById<TextView>(R.id.text_total)
-        val buttonIncrement = findViewById<Button>(R.id.button_increment)
+        // Setup NavController
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
 
-        // Observe LiveData total
-        viewModel.total.observe(this, Observer { total ->
-            textTotal.text = getString(R.string.text_total, total)
-        })
+        // Hubungkan action bar dengan navController
+        setupActionBarWithNavController(navController)
+    }
 
-        // Button listener
-        buttonIncrement.setOnClickListener {
-            viewModel.incrementTotal()
-        }
+    // Supaya tombol back di ActionBar bekerja
+    override fun onSupportNavigateUp(): Boolean {
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }

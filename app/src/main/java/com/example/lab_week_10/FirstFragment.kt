@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import android.widget.Button
 import android.widget.TextView
+import androidx.fragment.app.viewModels
 import com.example.lab_week_10.viewmodels.TotalViewModel
 
 class FirstFragment : Fragment() {
